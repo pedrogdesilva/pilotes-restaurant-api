@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "0931d3ff-13f7-42d1-8766-4f07280255c3",
+		"name": "PILOTE API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18521707"
+	},
+	"item": [
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryAddress\": {\r\n        \"street\": \"Street\",\r\n        \"postcode\": \"3500-007\",\r\n        \"city\": \"Viseu\",\r\n        \"country\": \"Portugal\"\r\n    },\r\n    \"amountPilotes\": 5,\r\n    \"creationDate\": \"2024-05-19T12:21:51\",\r\n    \"userId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/order/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"order",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryAddress\": \"treste\",\r\n    \"amountPilotes\": 10,\r\n    \"creationDate\": \"2024-05-19T12:21:51\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/order/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"order",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fstName\": \"Pedro\",\r\n    \"lastName\": \"Silva\",\r\n    \"phoneNumber\": \"968564850\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Order By Username",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/order?user=ed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"order"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "ed"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
